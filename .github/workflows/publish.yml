@@ -1,0 +1,12 @@
+---
+name: Publish
+on: workflow_dispatch
+jobs:
+  publish:
+    name: Publish
+    runs-on: ubuntu-20.04
+    steps:
+    - name: Hello
+      run: |
+        echo "Hello world!"
+
