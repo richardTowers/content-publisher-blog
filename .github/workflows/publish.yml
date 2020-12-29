@@ -6,7 +6,7 @@ jobs:
     name: Publish
     runs-on: ubuntu-20.04
     steps:
-    - name: Hello
+    - name: Download content
       run: |
-        echo "Hello world!"
+        curl --silent https://content-publisher.herokuapp.com/api/content | tee content.json
 
