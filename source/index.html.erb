@@ -6,11 +6,13 @@ title: Content Publisher Blog!
   Content Publisher Blog!
 </h1>
 
-<ul>
-  <% config[:content].each do |blog| %>
-    <li>
-      <%= link_to blog["title"], blog["base_path"] %>
-    </li>
-  <% end %>
-</ul>
+<h2>Recent Posts</h2>
+
+
+<% config[:content].each do |blog| %>
+  <div class="post">
+    <h3><%= link_to blog["title"], blog["base_path"] %></h3>
+    <p><%= blog["summary"] %></p>
+  </div>
+<% end %>
 
