@@ -16,7 +16,6 @@ jobs:
         curl --silent https://content-publisher.herokuapp.com/api/content | tee data/content.json
     - name: Build middleman site
       run: |
-        bundle install
         bundle exec middleman build
     - name: Move build to the github pages directory
       run: |
