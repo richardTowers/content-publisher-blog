@@ -24,7 +24,7 @@ jobs:
         bundle exec middleman build
     - name: Move build to the github pages directory
       run: |
-        mv build docs
+        rm -rf docs && mv build docs
     - name: Add, commit and push
       run: |
         git config user.name github-actions
