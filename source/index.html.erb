@@ -1,0 +1,16 @@
+---
+title: Content Publisher Blog!
+---
+
+<h1>
+  Content Publisher Blog!
+</h1>
+
+<ul>
+  <% config[:content].each do |blog| %>
+    <li>
+      <%= link_to blog["title"], blog["base_path"] %>
+    </li>
+  <% end %>
+</ul>
+

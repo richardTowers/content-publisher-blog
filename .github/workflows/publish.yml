@@ -6,7 +6,26 @@ jobs:
     name: Publish
     runs-on: ubuntu-20.04
     steps:
+    - uses: actions/checkout@v2
+    - uses: ruby/setup-ruby@v1
+      with:
+        bundler-cache: true
     - name: Download content
       run: |
-        curl --silent https://content-publisher.herokuapp.com/api/content | tee content.json
+        mkdir data
+        curl --silent https://content-publisher.herokuapp.com/api/content | tee data/content.json
+    - name: Build middleman site
+      run: |
+        bundle install
+        bundle exec middleman build
+    - name: Move build to the github pages directory
+      run: |
+        mv build docs
+    - name: Add, commit and push
+      run: |
+        git config user.name github-actions
+        git config user.email github-actions@github.com
+        git add .
+        git commit -m "Automatically rebuild site from GitHub Actions"
+        git push
 
