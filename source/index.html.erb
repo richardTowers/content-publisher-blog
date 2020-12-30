@@ -9,7 +9,7 @@ title: Content Publisher Blog!
 <h2>Recent Posts</h2>
 
 
-<% config[:content].each do |blog| %>
+<% config[:content].reverse.each do |blog| %>
   <div class="post">
     <h3><%= link_to blog["title"], blog["base_path"] %></h3>
     <p><%= blog["summary"] %></p>
