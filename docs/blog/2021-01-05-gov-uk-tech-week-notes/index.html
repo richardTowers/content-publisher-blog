@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Use the title from a page's frontmatter if it has one -->
+    <title>2021-01-05 - GOV.UK Tech Week Notes</title>
+    <link href="/stylesheets/styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="header">
+      <a href="/">Richard Towers</a>
+    </div>
+    <main>
+      <div class="content">
+      <h1 id="govuk-tech-week-notes">2021-01-05 - GOV.UK Tech Week Notes</h1>
+
+<h2 id="headlines">Headlines</h2>
+
+<p>(any tech debt paid down?, did tech fortnightly happen?, any joiners?, any leavers?)</p>
+
+<h2 id="accessibility-ian">Accessibility (Ian)</h2>
+
+<p>Short one - nothing to report in terms of stuff done, since the team took advantage of the festive bank holidays to take a break. In the next week we’re going to be taking a step back to see what we want and can achieve over the coming months, looking at implementing a more accessible accordion, and generally continuing the good work in making GOV.UK more accessible.</p>
+
+<h2 id="accounts-michael">Accounts (Michael)</h2>
+
+<p>In the past couple of weeks we've improved our logging, recording <a href="https://github.com/alphagov/govuk-account-manager-prototype/pull/491">more security events</a>, and we've got a Splunk dashboard set up to help us spot weird trends; we've implemented the <a href="https://github.com/alphagov/govuk-account-manager-prototype/pull/495">NCSC password denylist</a>, so users can't sign up with insecure passwords; we've made our registration and sign in forms <a href="https://github.com/alphagov/govuk-account-manager-prototype/pull/541">more password-manager friendly</a>, by changing how we mark up the input elements; and finally some content updates for brexit as well.</p>
+
+<h2 id="brexit--govuk-explore-simon">Brexit / GOV.UK Explore (Simon)</h2>
+
+<h2 id="covid-services-rosa--leena">COVID Services (Rosa / Leena)</h2>
+
+<h2 id="covid-smart-answers-sean">COVID Smart Answers (Sean)</h2>
+
+<h2 id="data-labs-karlkelvin">Data Labs (Karl/Kelvin)</h2>
+
+<p>We gathered in our first week to plan out epics for the engineers on the team to focus on next. The first thing we’re working on is to set up another instance of neo4j to provide a users with a separate Knowledge Graph with the data they expect, but maintain a sandbox for the data scientists to continue their experiments. This “new” Knowledge Graph will be a stop-gap while we develop the Templated Queries Prototype, with the plan to re-use existing data sources that are in production when we move away from the prototype. We’re also gearing up to plan how we can extract data models from the network database that is Knowledge Graph, and represent it still as a graph in somewhere we can use in production.</p>
+
+<h2 id="dgu-ken">DGU (Ken)</h2>
+
+<h2 id="platform-health-tom">Platform Health (Tom)</h2>
+
+<p>Last week, we made live the <a href="https://www.gov.uk/protected-food-drink-names">new “Protected food &amp; drink names” finder</a> which involved running a bulk import and publish task.</p>
+
+<p>We’ve also been <a href="https://trello.com/c/Fo651Mnq/2278-investigate-methods-of-grouping-deduping-pagerduty-alerts#comment-5ff3231ff89c8e79d14b103f">experimenting with grouping together PagerDuty alerts</a> to reduce the number of PagerDuty incidents we get when lots of machines have the same error.</p>
+
+<p>Following on from an investigation before the new year, we’re going to be <a href="https://trello.com/c/52YiPQ3y/2273-investigate-splitting-queues-to-send-email-onto-a-different-set-of-workers">thinking about whether we should have two Sidekiq processes for Email Alert API</a> (one for “fast jobs” such as sending emails, and one for the longer running ones) to avoid them being blocked on each other.</p>
+
+<p>This week we made an improvement to Link Checker API to be more flexible with URLs which are <a href="https://github.com/alphagov/link-checker-api/pull/436">not technically valid, but would be accepted by all known browsers</a>. This should reduce the number of false errors and warnings in Local Links Manager.</p>
+
+<p>We’ve also been working to <a href="https://github.com/alphagov/govuk_publishing_components/pull/1858">fix a cross-site scripting vulnerability</a> in govuk_publishing_components that was found as part of a recent round of IT health checks (pen testing).</p>
+
+<p>As part of work to reduce errors in Sentry we’ve spotted a few fixes to the Publishing API to reduce the number of <a href="https://github.com/alphagov/publishing-api/pull/1890">unactionable downstream worker errors</a> we see.</p>
+
+<p>We picked up the work importing Mapit again after Christmas and it appears to be going more smoothly this time, we should be in a position to deploy to production shortly.</p>
+
+<p>Finally, we’ve been thinking about our missions in the future, so we’re doing a team exercise to identify the biggest problems on the platform and whether we could form missions out of them.</p>
+
+<h2 id="replatforming-chris-banks">Replatforming (Chris Banks)</h2>
+
+<p>Bill has been adding some tests for our Terraform code and wrote a Concourse resource for GitHub commits, which gives us more flexibility about when we run CI actions.</p>
+
+<p>Our config management code is about to get much simpler and more maintainable, thanks to Richard's refactoring.</p>
+
+<h2 id="senior-tech-tim-erin-vitalie-bevan-richard">Senior Tech (Tim, Erin, Vitalie, Bevan, Richard)</h2>
+
+
+      </div>
+    </main>
+    <footer>
+      <img alt="doge" src="/images/doge.png"> Copyleft Richard Towers 2021. All wrongs reserved.
+    </footer>
+  </body>
+</html>
